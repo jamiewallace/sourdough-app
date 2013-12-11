@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
 
   def index
     @user = User.all
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params[:user_id])
+    @user = User.create(params[:user])
   end
 
   def show

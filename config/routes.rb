@@ -1,5 +1,50 @@
 SourdoughApp::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'users'}
+
+
+  devise_scope :user do
+    authenticated do
+      root to: 'users#index'
+    end
+  end
+
+  root to: 'welcome#index'
+  get '/about/', to: 'welcome#about'
+
+  # get '/users/new', to: 'users#new'
+  # post '/users/', to: 'users#create'
+  # get '/users/:id', to: 'users#show'
+  # get '/users/', to: 'users#index'
+  # get '/users/:id/edit', to: 'users#edit'
+  # put '/users/:id', to: 'users#update'
+  # delete '/users/:id', to: 'users#destroy'
+
+
+  # get '/messages/:id/    ', to: 'messages#new'
+  # post '/messages/:id   ', to: 'messages#create'
+
+  resources :images
+
+  # get '/images/new', to: 'images#new'
+  # post 'images/', to: 'images#create'
+  # get '/images/:id', to: 'images#show'
+  # get '/images/', to: 'images#index'
+  # get '/images/:id/edit', to: 'images#edit'
+  # put '/images/:id', to: 'images#update'
+  # delete '/images/:id', to: 'images#destroy'
+
+
+# high voltage for static pages
+
+
+ 
+  # get '/contact/'
+  # post '/contact/', to: ''
+
+
+
+
+  # post '/location/search', to ''
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
