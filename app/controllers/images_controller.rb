@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
       redirect_to @image, notice: 'Image was successfully saved!'
     else
       flash.now[:alert] = 'Image was not saved!'
-      redirect_to @image
+      redirect_to :index
     end
   end
 

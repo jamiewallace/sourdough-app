@@ -1,2 +1,12 @@
-%h1 Latest members
-
+%container
+  %h1 Latest members
+  - @users.each do |user|
+    =link_to user.username, user
+    %br
+    = user.town_city
+    %br
+    = user.country
+    %br
+    = user.avatar
+    %br
+    = user.description

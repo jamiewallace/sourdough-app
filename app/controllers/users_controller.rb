@@ -12,7 +12,12 @@ class UsersController < Devise::RegistrationsController
 
   def create
     @user = User.create(params[:user])
-    redirect_to @user
+    if @user.save
+      redirect_to @user, notice: 'Success!'
+    else
+      flash.now[:alert] = 'Unsuccessful sign up!'
+    redirect_to :index
+    end
   end
 
   def show
