@@ -9,11 +9,17 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.create(params[:image])
+    @image = Image.new(params[:image])
+    if @image.save
+      redirect_to @image, notice: 'Image was successfully saved!'
+    else
+      flash.now[:alert] = 'Image was not saved!'
+      redirect_to @image
+    end
   end
 
   def show
-
+    @image = Image.find(params[:id])
   end
 
   def edit
