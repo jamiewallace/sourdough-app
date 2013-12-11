@@ -6,6 +6,8 @@ SourdoughApp::Application.routes.draw do
     authenticated do
       root to: 'users#index'
     end
+
+    resources :users, only: [:index, :show]
   end
 
   root to: 'welcome#index'

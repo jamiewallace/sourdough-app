@@ -1,7 +1,9 @@
 class UsersController < Devise::RegistrationsController
 
+  before_filter :authenticate_user!
+
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def new
@@ -10,6 +12,7 @@ class UsersController < Devise::RegistrationsController
 
   def create
     @user = User.create(params[:user])
+    redirect_to @user
   end
 
   def show
@@ -25,7 +28,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def destroy
-
+    redirect_to :root
   end
 
 end
