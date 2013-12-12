@@ -16,7 +16,12 @@
   %div
     = f.label :avatar
     %br/
-    = f.text_field :avatar
+    = f.file_field :avatar
+  %div
+    = f.label :give_take, 'Select one of the following'
+    %br/
+    = f.select :give_take,['give', 'take']
+
   %div
     = f.label :first_line_address
     %br/

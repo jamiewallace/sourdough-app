@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
+    redirect_to :user
   end
 
   def create

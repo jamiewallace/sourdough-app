@@ -8,6 +8,7 @@ SourdoughApp::Application.routes.draw do
     end
 
     resources :users, only: [:index, :show]
+    post '/search', to: 'users#search'
   end
 
   root to: 'welcome#index'

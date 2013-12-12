@@ -3,3 +3,25 @@
   %head
     %h1 Member profile
     #map-canvas
+    = @user.username
+    %br
+    = @user.town_city
+    %br
+    = @user.country
+    %br
+    = image_tag @user.avatar
+    %br
+    = @user.description
+    
+    = form_for @image do |f| 
+      .field
+      = f.label :image
+      = f.file_field :image
+      .actions
+      = f.submit 'Save' 
+    
+    %h2 My images
+
+    = @user.images.size
+    - @user.images.each do |image|
+      = image_tag image.image
