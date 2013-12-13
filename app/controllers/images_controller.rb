@@ -11,8 +11,15 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(params[:image])
+    @image.user = current_user
+
+
+
+    #current_user.images.build(params[:image])
+
+
     if @image.save
-      redirect_to @image, notice: 'Image was successfully saved!'
+      redirect_to current_user, notice: 'Image was successfully saved!'
     else
       flash.now[:alert] = 'Image was not saved!'
       redirect_to :index

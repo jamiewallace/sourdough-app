@@ -1,14 +1,20 @@
 SourdoughApp::Application.routes.draw do
-  devise_for :users, controllers: {registrations: 'users'}
-
-
+  devise_for :users, controllers: {registrations: 'users', sessions: "sessions"}
+  #devise_for :users, controllers: {registrations: 'users', }
   devise_scope :user do
     authenticated do
       root to: 'users#index'
     end
 
-    resources :users, only: [:index, :show]
-    post '/search', to: 'users#search'
+    resources :users, only: [:index, :show, :edit] do
+      collection do
+        get :search
+      end
+    end
+    # post '/search/take', to: 'users#search'
+    # post '/search/give', to: 'users#search'
+    # get '/search/take', to: 'users#search'
+    # get '/search/give', to: 'users#search'
   end
 
   root to: 'welcome#index'

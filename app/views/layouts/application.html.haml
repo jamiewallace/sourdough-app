@@ -10,6 +10,8 @@
   %body
     #container
       .user-nav
+        =link_to 'Home', users_path
+        \|
         - if user_signed_in?
           Logged in as
           %b= current_user.email

@@ -22,6 +22,8 @@
     
     %h2 My images
 
-    = @user.images.size
     - @user.images.each do |image|
-      = image_tag image.image
+      = image_tag image.image_url
+
+    :javascript
+      window.user_location = {lat: #{@user.lat}, lon:#{@user.lon}}

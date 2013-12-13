@@ -1,13 +1,13 @@
 %h1 Welcome to sourdough tracker!
 
-= form_tag "/search" do
+= form_tag search_users_path, method: :get do
   = label_tag "I've got dough"
   = text_field_tag :address
-  = hidden_field_tag :type, :give
+  = hidden_field_tag :type, 'take'
   = submit_tag :Search
 
-= form_tag "/search" do
+= form_tag search_users_path, method: :get do
   = label_tag "Knead some dough?"
   = text_field_tag :address
-  = hidden_field_tag :type, :take
+  = hidden_field_tag :type, 'give'
   = submit_tag :Search

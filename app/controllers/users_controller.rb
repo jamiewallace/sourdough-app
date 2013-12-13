@@ -26,11 +26,16 @@ class UsersController < Devise::RegistrationsController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      redirect_to current_user
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -38,12 +43,13 @@ class UsersController < Devise::RegistrationsController
   end
 
   def search
-    if params[:type] == "give"
+    @type = params[:type]
+    if @type == "give"
       # look for users who NEED
-      @users = User.where(give_take: "take")
+      @users = User.where(give_take: "give")
     elsif params[:type] == "take"
       # look for users who GOT
-      @users = User.where(give_take: "give")
+      @users = User.where(give_take: "take")
     end
   end
 end
