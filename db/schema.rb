@@ -57,9 +57,10 @@ ActiveRecord::Schema.define(:version => 20131209184334) do
     t.string   "postcode"
     t.string   "country"
     t.text     "description"
-    t.string   "give_take"
+    t.string   "have_need"
     t.float    "lat"
     t.float    "lon"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

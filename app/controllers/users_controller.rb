@@ -44,12 +44,12 @@ class UsersController < Devise::RegistrationsController
 
   def search
     @type = params[:type]
-    if @type == "give"
+    if @type == "have"
       # look for users who NEED
-      @users = User.where(give_take: "give")
-    elsif params[:type] == "take"
+      @users = User.where(have_need: "have")
+    elsif params[:type] == "need"
       # look for users who GOT
-      @users = User.where(give_take: "take")
+      @users = User.where(have_need: "need")
     end
   end
 end

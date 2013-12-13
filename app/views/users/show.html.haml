@@ -3,6 +3,9 @@
   %head
     %h1 Member profile
     #map-canvas
+
+    %hr
+
     = @user.username
     %br
     = @user.town_city
@@ -12,13 +15,15 @@
     = image_tag @user.avatar
     %br
     = @user.description
+
+    %hr
     
     = form_for @image do |f| 
       .field
       = f.label :image
       = f.file_field :image
       .actions
-      = f.submit 'Save' 
+      = f.submit 'Save'  
     
     %h2 My images
 

@@ -44,9 +44,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_column :users, :postcode, :string
     add_column :users, :country, :string
     add_column :users, :description, :text
-    add_column :users, :give_take, :string
+    add_column :users, :have_need, :string
     add_column :users, :lat, :float
     add_column :users, :lon, :float
+    add_column :users, :role, :string
 
 
 
