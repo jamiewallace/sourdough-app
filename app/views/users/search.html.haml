@@ -1,14 +1,12 @@
 %h2 #{@type.titleize} Results
 - @users.each do |user|
-    =link_to user.username, user
-    %br
-    = user.town_city
-    %br
-    = user.country
-    %br
-    = image_tag user.avatar
-    %br
-    = user.description
-
-    %hr
-    
+  =link_to user.username, user
+  %br
+  = user.town_city
+  %br
+  = user.country
+  %br
+  = image_tag user.avatar
+  %br
+  = user.description
+  %hr
