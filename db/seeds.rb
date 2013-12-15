@@ -35,6 +35,11 @@ image6= Image.create!(user_id: 3, image: file10)
 image7= Image.create!(user_id: 4, image: file11)
 image8= Image.create!(user_id: 4, image: file12)
 
+message1 = Message.create(sender_id: user1.id, recipient_id: user2.id, content: "Hello Jamie, from Neha")
+# Alice messages Bob
+message2 = Message.create(sender_id: user2.id, recipient_id: user1.id, content: "Hello Neha, from Jamie")
+# Alice also messages Kate
+message3 = Message.create(sender_id: user2.id, recipient_id: user3.id, content: "Hello Alex, from Jamie")
 
 
 # t.string   "email",                  :default => "", :null => false
