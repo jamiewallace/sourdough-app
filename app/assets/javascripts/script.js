@@ -1,18 +1,3 @@
-// function define_have_map(){
-//   (window.user_location){
-//     latlng = new google.maps.LatLng(window.user_location.lat, window.user_location.lon);
-//   return latlng;
-// }
-
-
-// }
-// function define_need_map(){
-//   (window.user_location){
-//     latlng = new google.maps.LatLng(window.user_location.lat, window.user_location.lon);
-//   return latlng;
-// }
-
-
 function define_map_center(){
   if(window.user_location){
     latlng = new google.maps.LatLng(window.user_location.lat, window.user_location.lon);

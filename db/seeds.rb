@@ -18,9 +18,9 @@ file12 = File.open(File.join(Rails.root,"/app/assets/images/sd8.jpeg"))
 
 #remote_image_url
 
-user1 = User.create!(username: "NeNe", first_name: "Neha", last_name: "Shah", avatar: file1, first_line_address: "9 Back Hill", second_line_address: "", town_city: "London", postcode: "EC1R 5EN", country: "UK", description: "CSS supremo", have_need: 'need', email: "neshah07@gmail.com", password: "password", password_confirmation: "password")
+user1 = User.create!(username: "NeNe", first_name: "Neha", last_name: "Shah", avatar: file1, first_line_address: "9 Back Hill", second_line_address: "", town_city: "London", postcode: "EC1R 5EN", country: "UK", description: "CSS supremo", have_need: 'need', email: "neshah07@gmail.com", password: "password", password_confirmation: "password", role: "admin")
 
-user2 = User.create!(username: "Jamtista", first_name: "Jamie", last_name: "Wallace", avatar: file2, first_line_address: "12 Aquinas Street", second_line_address: "SE1 8AE", town_city: "London", postcode: "", country: "UK", description: "Professional coder", have_need: 'need', email: "wallacejamiec@gmail.com", password: "password", password_confirmation: "password")
+user2 = User.create!(username: "Jamtista", first_name: "Jamie", last_name: "Wallace", avatar: file2, first_line_address: "12 Aquinas Street", second_line_address: "SE1 8AE", town_city: "London", postcode: "", country: "UK", description: "Professional coder", have_need: 'need', email: "wallacejamiec@gmail.com", password: "password", password_confirmation: "password", role: "admin")
 
 user3 = User.create!(username: "HamHam", first_name: "Alex", last_name: "Hamlin", avatar: file3, first_line_address: "13 Eyre Street Hill", second_line_address: "", town_city: "London", postcode: "EC1R 5ET", country: "UK", description: "A shit baker", have_need: 'have', email: "alexham100@aol.com", password: "password", password_confirmation: "password")
 

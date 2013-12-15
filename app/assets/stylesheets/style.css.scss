@@ -1,3 +1,12 @@
+
+$grey_dark          : #303233;
+$grey_light         : #ABC4CA;
+
+
+
+
+
+
 #map-canvas {
   height: 200px;
   width: 200px;
@@ -41,6 +50,64 @@ img {
   margin-right: 0;
   margin-left: 0;
 }
-/**, h1 {
-  font-family: Times, serif
-}*/
+
+
+/* Messages */
+
+.contacts-list {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+
+.contacts-list li {
+  padding:0;
+  margin:0 0 5px 0;
+}
+
+.contacts-list a {
+  display:block;
+  background: $grey_light;
+  color:#000;
+  padding:0.5rem 1rem;
+}
+
+.message-unit {
+  padding:10px;
+  background: $grey_dark;
+  margin:0 0 20px 0;
+}
+
+.message-body {
+  font-size:18px;
+}
+
+.message-from {
+  font-style: italic;
+}
+
+#inline-message-compose {
+  background:$grey_dark;
+  width: 420px;
+  height: 0;
+  position:fixed;
+  bottom:-5px;
+  right:0;
+}
+
+#inline-message-compose .inner {
+  padding:10px 15px;
+  position:relative;
+  border-top:1px solid rgb(205,205,205);
+  border-left:1px solid rgb(205,205,205);
+}
+
+#inline-compose-close {
+  position:absolute;
+  top:15px;
+  right:15px;
+}
+
+#inline-compose-close:hover {
+  cursor:pointer;
+}

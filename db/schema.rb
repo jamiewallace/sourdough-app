@@ -21,13 +21,12 @@ ActiveRecord::Schema.define(:version => 20131209184334) do
   end
 
   create_table "messages", :force => true do |t|
-    t.integer  "user_id_from"
-    t.integer  "user_id_to"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
     t.text     "content"
-    t.boolean  "read"
-    t.boolean  "active"
+    t.boolean  "is_read"
+    t.boolean  "is_archived"
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

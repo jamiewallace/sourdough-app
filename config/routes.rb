@@ -3,7 +3,7 @@ SourdoughApp::Application.routes.draw do
   #devise_for :users, controllers: {registrations: 'users', }
   devise_scope :user do
     authenticated do
-      root to: 'users#index'
+      root to: 'users#show'
     end
 
     resources :users, only: [:index, :show, :edit] do
@@ -19,6 +19,10 @@ SourdoughApp::Application.routes.draw do
 
   root to: 'welcome#index'
   get '/about/', to: 'welcome#about'
+
+  resources :messages, only: [:create, :destroy]
+  get   'conversation/:id',   :to => "messages#conversation",  :as => "conversation"
+  get   'inbox',              :to => "messages#inbox"
 
   # get '/users/new', to: 'users#new'
   # post '/users/', to: 'users#create'

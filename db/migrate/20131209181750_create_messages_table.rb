@@ -1,15 +1,12 @@
 class CreateMessagesTable < ActiveRecord::Migration
-  def up
-    create_table :messages 
-    add_column :messages, :user_id_from, :integer
-    add_column :messages, :user_id_to, :integer
-    add_column :messages, :content, :text
-    add_column :messages, :read, :boolean
-    add_column :messages, :active, :boolean
-    add_timestamps :messages
-  end
-
-  def down
-    drop_table :messages
+  def change
+    create_table(:messages) do |t|
+      t.integer   :sender_id
+      t.integer   :recipient_id
+      t.text      :content
+      t.boolean   :is_read
+      t.boolean   :is_archived
+      t.datetime  :created_at
+    end
   end
 end

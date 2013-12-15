@@ -1,31 +1,27 @@
-# class Ability
-#   include CanCan::Ability
+class Ability
+  include CanCan::Ability
 
-#   def initialize(user)
-#     user ||= User.new
+# users have 3 roles: guest visitor (not logged in), member(logged in), admin
 
-#     if user.role == 'admin'
-#       can :manage, :all
-    
-#     elsif user.role == 'user'
+  def initialize(user)
+    user ||= User.new # guest user (not logged in)
+    # if user.role? :admin
+    #     can :manage, :all
+    # else
+    #     can :read, :all
+    # end
 
-#       can :read, :all
+    if user.id?
+        can :read, :all
+        # Messages
+        can [:inbox, :create, :conversation], Message
+        can :destroy, Message do |message|
+          (message.sender.id == current_user.id) || (message.recipient.id == current_user.id)
+        end
+    else
+      can :read, :all
+      can [:do_search, :new_search], User
+    end
+  end
+end
 
-#       can :create, Image
-#       can :edit, Image do |image|
-#         image.user == user
-#       end
-#       can :update, Post do |image|
-#         image.user == user
-#       end
-#       can :destroy, Post do |image|
-#         image.user == user
-#       end
-
-#     else
-#       can :read, :all
-#       can :create, User
-
-#     end
-#   end
-# end
