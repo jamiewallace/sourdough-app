@@ -10,3 +10,9 @@
   %br
   = user.description
   %hr
+
+#map-canvas-global
+
+:javascript
+  window.user_address = "#{@address}"
+  window.users = #{@users.to_json}

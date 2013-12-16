@@ -45,6 +45,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def search
+    @address = params[:address]
     @type = params[:type]
     if @type == "have"
       # look for users who NEED
