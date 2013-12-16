@@ -3,10 +3,24 @@ $grey_dark          : #303233;
 $grey_light         : #ABC4CA;
 
 
-body {
-  background-image: url('homeimage.jpg');
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+
+.welcome-background-image {
+  background-image: url('homeimage.jpg');
+  width: 100%
+}
+
+.container {
+  margin: 10px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 
 #map-canvas {
@@ -20,8 +34,8 @@ body {
 }
 
 img {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 
 // .container > div {

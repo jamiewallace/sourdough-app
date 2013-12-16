@@ -5,14 +5,18 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    # if user.role? :admin
-    #     can :manage, :all
-    # else
-    #     can :read, :all
-    # end
-
-    if user.id?
+    if user.role? :admin
+        can :manage, :all
+    elsif user.id?
         can :read, :all
+        can [:new, :create, :show], Image
+        can [:edit, :update, :destroy], Image do |image|
+          image.user == user
+        end
+        can [:new, :create, :show], User
+        can [:edit, :update, :destroy], User do |current_user|
+          current_user.id == user.id
+        end
         # Messages
         can [:inbox, :create, :conversation], Message
         can :destroy, Message do |message|
