@@ -51,6 +51,9 @@ $(function(){
   
 })
 
-
+// // function computeDistanceBetween() {
+//     var website visitor =
+//     var sourdough members = 
+// }
 
 

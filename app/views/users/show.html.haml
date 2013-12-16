@@ -1,36 +1,50 @@
 %head
-  %h1 Member profile
-  #map-canvas
+  %h1 #{@user.username}'s profile
+  %hr
+  .row
+    .col-md-2
+      = image_tag @user.avatar
+    .col-md-3
+      Username: 
+      = @user.username
+      %br
+      Location: 
+      = @user.town_city
+      %br
+      Country: 
+      = @user.country
+      %br
+      
+      = @user.description
+    .col-md-3 
+      #map-canvas
 
   %hr
 
-  = @user.username
-  %br
-  = @user.town_city
-  %br
-  = @user.country
-  %br
-  = image_tag @user.avatar
-  %br
-  = @user.description
+  %h3 Send a message to this user
+  
 
   %hr
   
   = form_for @image do |f| 
     .field
-    = f.label :image
-    = f.file_field :image
-    .actions
-    = f.submit 'Save'  
+
+    -if current_user  
+      %br Upload images of your triumphs (and tragedies)
+      %br
+      = f.file_field :image
+      %br
+      .actions
+      = f.submit 'Save'  
  
   -if @user.images.present?
-    %h2 My images
+    %h2 #{@user.username}'s photos
     %ul
     #slider.nivoSlider
       %img
         - @user.images.each do |image|
           = image_tag image.image_url
-  -else 
+  
 
  
   :javascript

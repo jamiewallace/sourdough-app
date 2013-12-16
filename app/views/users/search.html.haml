@@ -1,17 +1,28 @@
-%h2 #{@type.titleize} Results
-- @users.each do |user|
-  =link_to user.username, user
-  %br
-  = user.town_city
-  %br
-  = user.country
-  %br
-  = image_tag user.avatar
-  %br
-  = user.description
-  %hr
+- if @type == 'have'
+  %h2 They knead a sourdough starter!
+- else
+  %h2 They have a sourdough starter!
+%hr
 
-#map-canvas-global
+.row
+  .col-md-3
+    - @users.each do |user|
+      = image_tag user.avatar
+      %br
+      X miles away
+      %br
+      =link_to user.username, user
+      %br
+      = user.town_city
+      %br
+      = user.country
+      %br
+      = user.description
+      %hr
+
+  .row
+    .col-md-2
+      #map-canvas-global
 
 :javascript
   window.user_address = "#{@address}"
