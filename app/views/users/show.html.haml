@@ -22,13 +22,15 @@
     = f.file_field :image
     .actions
     = f.submit 'Save'  
-  
-  %h2 My images
-  %ul
-  #slider.nivoSlider
-    %img
-      - @user.images.each do |image|
-        = image_tag image.image_url
+ 
+  -if @user.images.present?
+    %h2 My images
+    %ul
+    #slider.nivoSlider
+      %img
+        - @user.images.each do |image|
+          = image_tag image.image_url
+  -else 
 
  
   :javascript
