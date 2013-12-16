@@ -22,6 +22,7 @@ $(function(){
     })
   }
 
+  //define a latitude longitude for a given address
   function codeAddress(address) {
     geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': address}, function(results, status) {
