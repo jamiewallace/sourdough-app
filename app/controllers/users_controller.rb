@@ -61,8 +61,6 @@ class UsersController < Devise::RegistrationsController
       @users_distance[user] = user.distance_to(@address)
     end
 
-    @users_distance = Hash[@users_distance.sort_by {|k,v| v}]
-
-    puts @users_distance
+    @users_distance = Hash[@users_distance.sort_by {|k,v| v.to_s}]
   end
 end
