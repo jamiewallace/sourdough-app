@@ -6,10 +6,10 @@
 
 .row
   .col-md-3
-    - @users.each do |user|
+    - @users_distance.each do |user, distance|
       = image_tag user.avatar
       %br
-      X miles away
+      = "#{distance.to_s[0, 4]} miles"
       %br
       =link_to user.username, user
       %br

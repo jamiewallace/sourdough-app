@@ -46,6 +46,7 @@ class UsersController < Devise::RegistrationsController
 
   def search
     @address = params[:address]
+
     @type = params[:type]
     if @type == "have"
       # look for users who NEED
@@ -54,5 +55,14 @@ class UsersController < Devise::RegistrationsController
       # look for users who GOT
       @users = User.where(have_need: "need")
     end
+
+    @users_distance = {}
+    @users.each do |user|
+      @users_distance[user] = user.distance_to(@address)
+    end
+
+    @users_distance = Hash[@users_distance.sort_by {|k,v| v}]
+
+    puts @users_distance
   end
 end
