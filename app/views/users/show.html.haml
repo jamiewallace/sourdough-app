@@ -2,62 +2,65 @@
   %h1 #{@user.username}'s profile
   %hr
   .row
-    .col-md-2
-      = image_tag @user.avatar
-    .col-md-3
-      Username: 
-      = @user.username
-      %br
-      Location: 
-      = @user.town_city
-      %br
-      Country: 
-      = @user.country
-      %br
-      
-      = @user.description
-    .col-md-3 
-      #map-canvas
-    .row
+    .box-css
+      .col-md-2
+        = image_tag @user.avatar
       .col-md-3
-        - if current_user
-          %h3 Send a message to #{@user.username}
-          #new-message-profile
-            %form#new_message
-              .form-group
-                = hidden_field_tag :profile, true
-                = hidden_field_tag "message[sender_id]", current_user.id
-                = hidden_field_tag "message[recipient_id]", @user.id
-                = text_area_tag "message[content]",nil, :class => 'form-control', :rows => 5
-                = submit_tag 'Send', {:class => 'btn btn-primary', :id => "send-message"}
-        - else
-          %h3 
-            If you'd like to send a message to
-            = "#{@user.first_name} #{@user.last_name}"
-            please 
-            = link_to "sign up" , new_user_registration_path 
-            (I'm the CTA bitch)
-        %hr
-  
-  = form_for @image do |f| 
-    .field
+        Username: 
+        = @user.username
+        %br
+        Location: 
+        = @user.town_city
+        %br
+        Country: 
+        = @user.country
+        %br
+        
+        = @user.description
+      .col-md-3 
+        #map-canvas
+      .row
+        .col-md-3
+          - if current_user
+            %h3 Send a message to #{@user.username}
+            #new-message-profile
+              %form#new_message
+                .form-group
+                  = hidden_field_tag :profile, true
+                  = hidden_field_tag "message[sender_id]", current_user.id
+                  = hidden_field_tag "message[recipient_id]", @user.id
+                  = text_area_tag "message[content]",nil, :class => 'form-control', :rows => 5
+                  = submit_tag 'Send', {:class => 'btn btn-primary', :id => "send-message"}
+          - else
+            %h3 
+              = link_to "Sign up" , new_user_registration_path 
+              to send a message to
+              = "#{@user.username}"
+              and see if they'll share some dough with you
+              
+              
+          %hr
+  .col-md-4 
+    .box-css
+      = form_for @image do |f| 
+        .field
 
-    -if current_user  
-      %br Upload images of your triumphs (and tragedies)
-      %br
-      = f.file_field :image
-      %br
-      .actions
-      = f.submit 'Save'  
- 
-  -if @user.images.present?
-    %h2 #{@user.username}'s photos
-    %ul
-    #slider.nivoSlider
-      %img
-        - @user.images.each do |image|
-          = image_tag image.image_url
-  
+        -if current_user  
+          %br Upload images of your triumphs (and tragedies)
+          %br
+          = f.file_field :image
+          %br
+          .actions
+          = f.submit 'Save'  
+     
+      -if @user.images.present?
+        %h2 #{@user.username}'s photos
+        %ul
+        #slider.nivoSlider
+          %img
+            - @user.images.each do |image|
+              = image_tag image.image_url
+    
 
  
   :javascript

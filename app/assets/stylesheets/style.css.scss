@@ -22,9 +22,18 @@ $grey_light         : #ABC4CA;
   margin-left: auto;
 }
 
+.box-css {
+  background-color: #F4ED7B;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 13px;
+}
+
+
 img {
   height: 150px;
   width: 150px;
+  border-radius: 5px;
 }
 
 
@@ -115,14 +124,18 @@ img {
 #map-canvas-global{
   width: 800px;
   height: 400px;
+  border-radius: 5px;
 }
 
 #map-canvas {
   height: 200px;
   width: 200px;
+  border-radius: 5px;
 }
 
 #map-results-canvas {
   height: 100%;
   width: 100%;
+  border-radius: 5px;
+
 }
