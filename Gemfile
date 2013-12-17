@@ -15,7 +15,7 @@ gem 'cancan'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'geocoder'
 
-#gem "active_model_serializers"
+gem "active_model_serializers"
 
 # Gems used only for assets and not required
 # in production environments by default.

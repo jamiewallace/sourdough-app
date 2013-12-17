@@ -16,10 +16,11 @@ class UserSerializer < ActiveModel::Serializer
               :second_line_address,
               :town_city,
               :updated_at,
-              :username
-              # :user_path
+              :username,
+              :show_path,
+              :avatar_url
 
-  def user_path
-    user_path
+  def show_path
+    user_path(object)
   end
 end

@@ -26,4 +26,4 @@
 
 :javascript
   window.user_address = "#{@address}"
-  window.users = #{@users.map {|u| h = u.attributes; h[:user_path] = user_path(u); h }.to_json}
+  window.users = #{@user_json}
