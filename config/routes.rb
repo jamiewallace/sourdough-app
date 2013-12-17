@@ -8,7 +8,7 @@ SourdoughApp::Application.routes.draw do
 
     resources :users, only: [:index, :show, :edit] do
       collection do
-        get :search
+        post :search
       end
     end
     # post '/search/take', to: 'users#search'
