@@ -2,9 +2,12 @@ $(function(){
   var map;
 
   function openWindow(marker, contentString){
+
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
+    
+    infowindow.close();
     infowindow.open(map, marker)
   }
 
@@ -22,7 +25,11 @@ $(function(){
       bounds.extend(marker.position);
 
       google.maps.event.addListener(marker, 'click', function() {
-        string = "<img src='"+user.avatar.url+"' width='50'><p>"+user.first_name+"</p>"
+        // string = "<img src='"+user.avatar.url+"' width='50'><p>"+user.first_name+"</p>"
+
+
+        string = "<img src='"+user.avatar.url+"' width='50'><p><a href='"+user.user_path+"'>'"+user.first_name+"'</a></p>"
+
         openWindow(marker, string)
       });
     });
@@ -49,20 +56,16 @@ $(function(){
       zoom: 2,
       center: new google.maps.LatLng(0, 0)
     };
+
     map = new google.maps.Map(document.getElementById('map-canvas-global'),
         mapOptions);
+
+    
     
     renderUsersPosition();
   }
-
-  initialize();
+  if($("#map-canvas-global").length > 0)
+    initialize();
   
   
 })
-
-// // function computeDistanceBetween() {
-//     var website visitor =
-//     var sourdough members = 
-// }
-
-

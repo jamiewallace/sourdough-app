@@ -18,13 +18,26 @@
       = @user.description
     .col-md-3 
       #map-canvas
-
-  %hr
-
-  %h3 Send a message to this user
-  
-
-  %hr
+    .row
+      .col-md-3
+        - if current_user
+          %h3 Send a message to #{@user.username}
+          #new-message-profile
+            %form#new_message
+              .form-group
+                = hidden_field_tag :profile, true
+                = hidden_field_tag "message[sender_id]", current_user.id
+                = hidden_field_tag "message[recipient_id]", @user.id
+                = text_area_tag "message[content]",nil, :class => 'form-control', :rows => 5
+                = submit_tag 'Send', {:class => 'btn btn-primary', :id => "send-message"}
+        - else
+          %h3 
+            If you'd like to send a message to
+            = "#{@user.first_name} #{@user.last_name}"
+            please 
+            = link_to "sign up" , new_user_registration_path 
+            (I'm the CTA bitch)
+        %hr
   
   = form_for @image do |f| 
     .field

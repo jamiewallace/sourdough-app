@@ -16,11 +16,10 @@ $(function() {
   });
 
   function sendMessage(formData) {
-    $.post('/messages', formData, function(data) {
+    route = /profile=true/.test(formData) ? "/messages.json" : "/messages"
+    $.post(route, formData, function(data) {
       $('#message_content').val('');
       $(data).hide().appendTo($('#message-thread')).slideDown();
-    }).fail(function(data) {
-      window.flashAlert($('.alert-success'), data.responseText);
     })
   }
 
@@ -58,4 +57,7 @@ $(function() {
     getConversation(auto_load_first_url);
   }
   
+
+  //if we are on a profile page , we need to call the javascript functions
+  if($("#new-message-profile").length > 0) listenForThreadEvents()
 })

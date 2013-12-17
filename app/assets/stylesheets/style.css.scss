@@ -22,27 +22,11 @@ $grey_light         : #ABC4CA;
   margin-left: auto;
 }
 
-
-#map-canvas {
-  height: 200px;
-  width: 200px;
-}
-
-#map-results-canvas {
-  height: 100%;
-  width: 100%;
-}
-
 img {
   height: 150px;
   width: 150px;
 }
 
-// .container > div {
-
-//   background-color: grey;
-//   margin: 10px;
-// }
 
 .text-only {
   padding: 15px;
@@ -51,16 +35,15 @@ img {
 
 .welcome-search-box {
 
-  background-color: red;
+  background-color: #F1B26B;
   padding: 10px;
-  margin: 10px;
+  margin: 30px;
+  border-radius: 5px;
   h1 {
     margin: 0 0 5px 0;
   }
 
 }
-
-
 
 .inner-row {
   margin-right: 0;
@@ -128,8 +111,18 @@ img {
   cursor:pointer;
 }
 
-//gerry map implementation
+//gerry and David map implementation
 #map-canvas-global{
   width: 800px;
   height: 400px;
+}
+
+#map-canvas {
+  height: 200px;
+  width: 200px;
+}
+
+#map-results-canvas {
+  height: 100%;
+  width: 100%;
 }

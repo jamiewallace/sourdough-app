@@ -17,7 +17,11 @@ class MessagesController < ApplicationController
   def create
     message = Message.create params[:message]
     if request.xhr?
-      render :partial => 'message', locals: {:message => message}
+      if params[:profile]
+        render nothing: true
+      else
+        render :partial => 'message', locals: {:message => message}
+      end
     else
      redirect_to inbox_url
     end
