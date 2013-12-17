@@ -9,17 +9,25 @@ $(function(){
   }
 
   function renderUsersPosition(){
+    //create empty LatLngBounds object
+    var bounds = new google.maps.LatLngBounds();
+
     $.each(window.users, function(index, user){
       var marker = new google.maps.Marker({
           map: map,
           position: new google.maps.LatLng(user.lat, user.lon)
       });
 
+      //extend the bounds to include each marker's position
+      bounds.extend(marker.position);
+
       google.maps.event.addListener(marker, 'click', function() {
         string = "<img src='"+user.avatar.url+"' width='50'><p>"+user.first_name+"</p>"
         openWindow(marker, string)
       });
-    })
+    });
+
+    map.fitBounds(bounds);
   }
 
   //define a latitude longitude for a given address
@@ -38,12 +46,13 @@ $(function(){
 
   function initialize() {
     var mapOptions = {
-      zoom: 12,
-      center: new google.maps.LatLng(51.508315, -0.103683)
+      zoom: 2,
+      center: new google.maps.LatLng(0, 0)
     };
     map = new google.maps.Map(document.getElementById('map-canvas-global'),
         mapOptions);
-    renderUsersPosition()
+    
+    renderUsersPosition();
   }
 
   initialize();
