@@ -1,63 +1,64 @@
-%h1 Edit your profile
+.box-css.col-md-4
+  %h1 Edit your profile
 
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put}) do |f|
-  = devise_error_messages!
-  
-  %div
-    = f.label :username
-    %br/
-    = f.text_field :username, :autofocus => true
-  %div
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name
-  %div
-    = f.label :last_name
-    %br/
-    = f.text_field :last_name
-  %div
-    = f.label :avatar
-    %br/
-    = f.file_field :avatar
-  %div
-    = f.label :have_need, 'Select one of the following'
-    %br/
-    = f.select :have_need,['have', 'need']
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put}) do |f|
+    = devise_error_messages!
+    
+    %div
+      = f.label :username
+      %br/
+      = f.text_field :username, :autofocus => true
+    %div
+      = f.label :first_name
+      %br/
+      = f.text_field :first_name
+    %div
+      = f.label :last_name
+      %br/
+      = f.text_field :last_name
+    %div
+      = f.label :avatar
+      %br/
+      = f.file_field :avatar
+    %div
+      = f.label :have_need, 'Select one of the following'
+      %br/
+      = f.select :have_need,['have', 'need']
 
-  %div
-    = f.label :first_line_address
-    %br/
-    = f.text_field :first_line_address
-  %div
-    = f.label :second_line_address
-    %br/
-    = f.text_field :second_line_address
-  %div
-    = f.label :town_city
-    %br/
-    = f.text_field :town_city
-  %div
-    = f.label :postcode
-    %br/
-    = f.text_field :postcode
-  %div
-    = f.label :country
-    %br/
-    = f.text_field :country
-  %div
-    = f.label :description
-    %br/
-    = f.text_field :description
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Save"
+    %div
+      = f.label :first_line_address
+      %br/
+      = f.text_field :first_line_address
+    %div
+      = f.label :second_line_address
+      %br/
+      = f.text_field :second_line_address
+    %div
+      = f.label :town_city
+      %br/
+      = f.text_field :town_city
+    %div
+      = f.label :postcode
+      %br/
+      = f.text_field :postcode
+    %div
+      = f.label :country
+      %br/
+      = f.text_field :country
+    %div
+      = f.label :description
+      %br/
+      = f.text_field :description
+    %div
+      = f.label :email
+      %br/
+      = f.email_field :email
+    %div
+      = f.label :password
+      %br/
+      = f.password_field :password
+    %div
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation
+    %div= f.submit "Save"

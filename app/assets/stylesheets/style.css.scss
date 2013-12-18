@@ -18,9 +18,34 @@ $grey_light         : #ABC4CA;
   margin-left: auto;
 }
 
+body {
+  background: url('/assets/homeimage2.jpg');
+  background-size: cover;
+  }  
 
+/* navbar */
 
-/* nav */
+.navbar-brand {
+  a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  }
+}
+
+.form-control {
+  width: 270px;
+}
+
+.radio {
+  color: white;
+
+}
+
+nav.navbar.navbar-default {
+  background-color: rgba(92,33,27, 0.8);
+  border: 0px;
+}
 
 .nav.navbar-left {
   li {
@@ -32,13 +57,18 @@ $grey_light         : #ABC4CA;
   li {
     float: left;
   }
+  a {
+    color: white;
+  }
 }
 
 
 /* Member profile page */
 
+
+
 .box-css {
-  background-color: #F4ED7B;
+  background-color: rgba(232,210,189, 0.9);
   padding: 10px;
   border-radius: 5px;
   margin: 20px;
@@ -54,6 +84,7 @@ img {
 
 .text-only {
   padding: 15px;
+  color: white;
 }
 
 .inner-row {
@@ -62,7 +93,7 @@ img {
 }
 
 
-/* Weclome page */
+/* Welcome page */
 
 .col-md-5.welcome-h1-text {
   color: white;
@@ -78,11 +109,11 @@ img {
 .welcome-search-box {
 
   color: white;
-  background-color: #572A24;
+  background-color: rgba(92,33,27, 0.8);
   padding: 10px;
   margin: 30px 100px;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px #572A24;
+  box-shadow: 5px 5px 10px rgba(92,33,27, 0.8);
   text-shadow: 2px 2px 2px black;
   float: right;
   h1 {

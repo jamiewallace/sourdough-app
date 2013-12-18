@@ -1,9 +1,9 @@
 / - content_for :stylesheets do
 :css
-  body {
-    background: url('/assets/homeimage2.jpg');
-    background-size: cover;
-  }  
+  / body {
+  /   background: url('/assets/homeimage2.jpg');
+  /   background-size: cover;
+  / }  
 
 
 .row
@@ -14,7 +14,7 @@
     %p Share your sourdough starter and help others become successful bakers
     = form_tag search_users_path, method: :post do
       .inner-row
-        = text_field_tag :address
+        = text_field_tag :address, nil, placeholder: 'Enter location'
         = hidden_field_tag :type, 'need'
         = submit_tag :Search
 .row
@@ -23,6 +23,8 @@
     %p Find a sourdough starter and learn how to make high quality low cost bread
     = form_tag search_users_path, method: :post do
       .inner-row
-        = text_field_tag :address
+        = text_field_tag :address, nil, placeholder: 'Enter location'
         = hidden_field_tag :type, 'have'
         = submit_tag :Search
+
+
