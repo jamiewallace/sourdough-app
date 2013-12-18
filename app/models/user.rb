@@ -29,7 +29,17 @@ class User < ActiveRecord::Base
   def messages_with_user other_user_id
     sent     = self.messages_sent.where("recipient_id = ?", other_user_id)
     received = self.messages_received.where("sender_id = ?", other_user_id)
+
+    self.set_as_read(received)
+
     [sent, received].flatten.sort_by(&:created_at)
+  end
+
+  def set_as_read messages
+    messages.each do |message|
+      message.is_read = true
+      message.save
+    end
   end
 
   def contact_list

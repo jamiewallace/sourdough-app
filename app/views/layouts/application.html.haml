@@ -26,18 +26,20 @@
             .navbar-brand
               =link_to 'Sourdoughtracker', user_path(current_user)
           .collapse.navbar-collapse
-            %ul.nav.navbar-nav
+            %ul.nav.navbar-right
               %li.text-only
                 %span
                   %b "Logged in as #{current_user.email}"
               %li
+                = link_to pluralize(current_user.messages_received.where(is_read: false).count, "new message"), inbox_path
+              %li
                 = link_to 'Edit Profile', edit_user_registration_path
               %li
                 = link_to 'Sign out', destroy_user_session_path, :method => "delete"
-            %form.navbar-form.navbar-right{role: "search"}
-              .form-group
-                %input.form-control{placeholder: "Search", type: "text"}/
-              %button.btn.btn-default{type: "submit"} Submit
+            / %form.navbar-form.navbar-right{role: "search"}
+            /   .form-group
+            /     %input.form-control{placeholder: "Search", type: "text"}/
+            /   %button.btn.btn-default{type: "submit"} Submit
         
         
         - else
@@ -46,15 +48,15 @@
             .navbar-brand
               =link_to 'Sourdoughtracker', root_path
           .collapse.navbar-collapse
-            %ul.nav.navbar-nav
+            %ul.nav.navbar-right
               %li
                 = link_to 'Sign up', new_user_registration_path
               %li
                 = link_to 'Sign in', new_user_session_path
-            %form.navbar-form.navbar-right{role: "search"}
-              .form-group
-                %input.form-control{placeholder: "DOESN'T WORK", type: "text"}/
-              %button.btn.btn-default{type: "submit"} Submit
+            / %form.navbar-form.navbar-right{role: "search"}
+            /   .form-group
+            /     %input.form-control{placeholder: "DOESN'T WORK", type: "text"}/
+            /   %button.btn.btn-default{type: "submit"} Submit
 
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
