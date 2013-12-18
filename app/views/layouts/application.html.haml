@@ -29,17 +29,25 @@
             %ul.nav.navbar-right
               %li.text-only
                 %span
-                  %b "Logged in as #{current_user.email}"
+                  %b Hello #{current_user.username}
               %li
                 = link_to pluralize(current_user.messages_received.where(is_read: false).count, "new message"), inbox_path
               %li
                 = link_to 'Edit Profile', edit_user_registration_path
               %li
                 = link_to 'Sign out', destroy_user_session_path, :method => "delete"
-            / %form.navbar-form.navbar-right{role: "search"}
-            /   .form-group
-            /     %input.form-control{placeholder: "Search", type: "text"}/
-            /   %button.btn.btn-default{type: "submit"} Submit
+            %form.navbar-form.navbar-left{role: "search", action:"/users/search", method: "post"}
+              .form-group
+                %input.form-control{placeholder: "Enter location to search for members", type: "text", name: "search_query"}/
+              .radio
+                %input#optionsRadios2{name: "type", type: "radio", value: "have"}
+                %label
+                  Have
+                %br
+                %input#optionsRadios2{name: "type", type: "radio", value: "need"}
+                %label
+                  Need        
+              %button.btn.btn-default{type: "submit"} search
         
         
         - else

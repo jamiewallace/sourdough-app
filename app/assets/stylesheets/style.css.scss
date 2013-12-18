@@ -9,6 +9,8 @@ $grey_light         : #ABC4CA;
   box-sizing: border-box;
 }
 
+/* site wide */
+
 .container {
   margin: 10px;
   padding: 10px;
@@ -20,6 +22,12 @@ $grey_light         : #ABC4CA;
 
 /* nav */
 
+.nav.navbar-left {
+  li {
+    float: left;
+  }
+}
+
 .nav.navbar-right {
   li {
     float: left;
@@ -27,13 +35,13 @@ $grey_light         : #ABC4CA;
 }
 
 
-
+/* Member profile page */
 
 .box-css {
   background-color: #F4ED7B;
   padding: 10px;
   border-radius: 5px;
-  margin: 13px;
+  margin: 20px;
 }
 
 

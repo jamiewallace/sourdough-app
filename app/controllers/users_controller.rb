@@ -56,14 +56,8 @@ class UsersController < Devise::RegistrationsController
     @address = params[:address]
 
     @type = params[:type]
-    if @type == "have"
-      # look for users who NEED
-      @users = User.where(have_need: "have")
-    elsif params[:type] == "need"
-      # look for users who GOT
-      @users = User.where(have_need: "need")
-    end
-
+    @users = User.where(have_need: @type)
+    
     @users_distance = {}
     @users.each do |user|
       @users_distance[user] = user.distance_to(@address)
