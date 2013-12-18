@@ -1,24 +1,28 @@
 .box-css.col-md-12
-  .row
+  .row.search-result
     - if @type == 'have'
       %h2 They have a sourdough starter!
+      %h3 Click on a member profile below to contact them
+
     - else
       %h2 They knead a sourdough starter!
+      %h3 Click on a member profile below to contact them
+      %br
 
-      .col-md-3
-        - @users_distance.each do |user, distance|
-          = image_tag user.avatar
-          %br
-          = "#{distance.to_s[0, 4]} miles"
-          %br
-          =link_to user.username, user
-          %br
-          = user.town_city
-          %br
-          = user.country
-          %br
-          = user.description
-          %hr
+    .col-md-3
+      - @users_distance.each do |user, distance|
+        = image_tag user.avatar
+        %br
+        = "#{distance.to_s[0, 4]} miles"
+        %br
+        =link_to user.username, user
+        %br
+        = user.town_city
+        %br
+        = user.country
+        %br
+        = user.description
+        %hr
 
     .row
       .col-md-2

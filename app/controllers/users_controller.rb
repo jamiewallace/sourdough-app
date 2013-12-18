@@ -56,6 +56,7 @@ class UsersController < Devise::RegistrationsController
     @address = params[:address]
 
     @type = params[:type]
+
     @users = User.where(have_need: @type)
     
     @users_distance = {}
@@ -67,6 +68,6 @@ class UsersController < Devise::RegistrationsController
     @users_distance = @users_distance[0, 5]  # take only the first 5 users (the 5 closest)
     @users_distance = Hash[@users_distance]  # convert to hash
 
-    @user_json = @users.map {|u| UserSerializer.new(u, root: false)}.to_json
+    @user_json = @users_distance.keys.map {|u| UserSerializer.new(u, root: false)}.to_json
   end
 end

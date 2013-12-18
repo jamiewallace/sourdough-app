@@ -39,9 +39,9 @@
                 = link_to 'Sign out', destroy_user_session_path, :method => "delete"
             %form.navbar-form.navbar-left{role: "search", action:"/users/search", method: "post"}
               .form-group
-                %input.form-control{placeholder: "Enter location to search for members", type: "text", name: "search_query"}/
+                %input.form-control{placeholder: "Enter location to search for members", type: "text", name: "address"}/
               .radio
-                %input#optionsRadios2{name: "type", type: "radio", value: "have"}
+                %input#optionsRadios2{name: "type", type: "radio", value: "have", checked: true}
                 %label
                   Have
                 %br
