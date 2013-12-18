@@ -25,7 +25,6 @@ $(function(){
       bounds.extend(marker.position);
 
       google.maps.event.addListener(marker, 'click', function() {
-        // string = "<img src='"+user.avatar.url+"' width='50'><p>"+user.first_name+"</p>"
 
 
         string = "<img src='"+user.avatar_url+"' width='50'><p><a href='"+user.show_path+"'>'"+user.first_name+"'</a></p>"

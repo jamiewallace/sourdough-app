@@ -9,18 +9,25 @@ $grey_light         : #ABC4CA;
   box-sizing: border-box;
 }
 
-
-.welcome-background-image {
-  background-image: url('homeimage.jpg');
-  width: 100%
-}
-
 .container {
   margin: 10px;
   padding: 10px;
   margin-right: auto;
   margin-left: auto;
 }
+
+
+
+/* nav */
+
+.nav.navbar-right {
+  li {
+    float: left;
+  }
+}
+
+
+
 
 .box-css {
   background-color: #F4ED7B;
@@ -41,23 +48,41 @@ img {
   padding: 15px;
 }
 
+.inner-row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+/* Weclome page */
+
+.col-md-5.welcome-h1-text {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 20px;
+}
+
+.welcome-background-image {
+  background-image: url('homeimage.jpg');
+  width: 100%
+}
 
 .welcome-search-box {
 
-  background-color: #F1B26B;
+  color: white;
+  background-color: #572A24;
   padding: 10px;
-  margin: 30px;
+  margin: 30px 100px;
   border-radius: 5px;
+  box-shadow: 5px 5px 10px #572A24;
+  text-shadow: 2px 2px 2px black;
+  float: right;
   h1 {
     margin: 0 0 5px 0;
   }
 
 }
 
-.inner-row {
-  margin-right: 0;
-  margin-left: 0;
-}
 
 
 /* Messages */
