@@ -4,9 +4,10 @@ class CreateMessagesTable < ActiveRecord::Migration
       t.integer   :sender_id
       t.integer   :recipient_id
       t.text      :content
-      t.boolean   :is_read
-      t.boolean   :is_archived
-      t.datetime  :created_at
+      t.boolean   :is_read, default: false
+      t.boolean   :is_archived, default: false
+      
+      t.timestamps
     end
   end
 end
