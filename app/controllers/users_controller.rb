@@ -29,9 +29,10 @@ class UsersController < Devise::RegistrationsController
     @user = User.find(params[:id])
     @image = Image.new
 
-    @other_user      = User.find params[:id]
-    @message_thread  = current_user.messages_with_user @other_user.id
-    @new_message     = current_user.messages_sent.new(recipient_id: @other_user.id)
+    if current_user
+      @message_thread  = current_user.messages_with_user @user.id
+      @new_message     = current_user.messages_sent.new(recipient_id: @user.id)
+    end
   end
 
   def edit
