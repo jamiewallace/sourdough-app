@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
         render :partial => 'message', locals: {:message => message}
       end
     else
-     redirect_to inbox_url
+     redirect_to message.recipient
     end
   end
 
