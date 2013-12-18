@@ -22,26 +22,36 @@
       .row
         .col-md-3
           - if current_user
-            %h3 Send a message to #{@user.username}
-            #new-message-profile
-              %form#new_message
-                .form-group
-                  = hidden_field_tag :profile, true
-                  = hidden_field_tag "message[sender_id]", current_user.id
-                  = hidden_field_tag "message[recipient_id]", @user.id
-                  = text_area_tag "message[content]",nil, :class => 'form-control', :rows => 5
-                  = submit_tag 'Send', {:class => 'btn btn-primary', :id => "send-message"}
+            - if current_user.id != @user.id
+              %h3 Send a message to #{@user.username}
+              #new-message-profile
+                %form#new_message
+                  .form-group
+                    = hidden_field_tag :profile, true
+                    = hidden_field_tag "message[sender_id]", current_user.id
+                    = hidden_field_tag "message[recipient_id]", @user.id
+                    = text_area_tag "message[content]",nil, :class => 'form-control', :rows => 5
+                    = submit_tag 'Send', {:class => 'btn btn-primary', :id => "send-message"}
           - else
             %h3 
-              = link_to "Sign up" , new_user_registration_path 
+              = link_to "Sign up" , new_user_registration_path
+              or
+              = link_to "Sign in" , new_user_session_path
               to send a message to
               = "#{@user.username}"
               and see if they'll share some dough with you
-              
-              
-          %hr
   .col-md-4 
     .box-css
+      
+     
+      -if @user.images.present?
+        %h2 #{@user.username}'s photos
+        %ul
+        #slider.nivoSlider
+          %img
+            - @user.images.each do |image|
+              = image_tag image.image_url
+    
       = form_for @image do |f| 
         .field
 
@@ -52,16 +62,6 @@
           %br
           .actions
           = f.submit 'Save'  
-     
-      -if @user.images.present?
-        %h2 #{@user.username}'s photos
-        %ul
-        #slider.nivoSlider
-          %img
-            - @user.images.each do |image|
-              = image_tag image.image_url
-    
-
  
   :javascript
   $(window).load(function() {
