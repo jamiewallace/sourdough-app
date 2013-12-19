@@ -19,6 +19,10 @@ SourdoughApp::Application.routes.draw do
 
   root to: 'welcome#index'
   get '/about/', to: 'welcome#about'
+  get '/faq/', to: 'welcome#faq'
+  get '/contact/', to: 'welcome#contact'
+  get '/forum/', to: 'welcome#forum'
+
 
   resources :messages, only: [:create, :destroy]
   get   'conversation/:id',   :to => "messages#conversation",  :as => "conversation"

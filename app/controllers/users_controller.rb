@@ -12,16 +12,25 @@ class UsersController < Devise::RegistrationsController
   end
 
   def new
+    @ref_user_id = params[:ref_user_id]
     @user = User.new
   end
 
   def create
-    @user = User.create(params[:user])
+    @user = User.new(params[:user])
+    ref_user_id = params[:ref_user_id]
+
     if @user.save
-      redirect_to @user, notice: 'Success!'
+      sign_in(:user, @user)
+
+      if ref_user_id
+        redirect_to User.find(ref_user_id)
+      else
+        redirect_to @user, notice: 'Success!'
+      end
     else
       flash.now[:alert] = 'Unsuccessful sign up!'
-    redirect_to '/users'
+      redirect_to '/users'
     end
   end
 

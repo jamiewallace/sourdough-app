@@ -6,6 +6,8 @@
     .col-md-3
       = image_tag @user.avatar
     .col-md-3
+      #map-canvas
+    .col-md-2
       Location: 
       = @user.town_city
       %br
@@ -14,8 +16,7 @@
       %br
       
       = @user.description
-    .col-md-3 
-      #map-canvas
+    
 
     .box-css.col-md-8 
       -if @user.images.present?
@@ -56,17 +57,17 @@
           - @message_thread.each do |message|
             = render message, :locals => {:message => message}
             
-        %h3 Send a message to #{@user.username}
+        %h4 Send a message to #{@user.username}
         #message-compose
           = form_for @new_message do |f|
             = f.hidden_field :recipient_id
             = f.hidden_field :sender_id
             .form-group
               = f.text_area :content, {:class => 'form-control', :rows => 5}
-            = f.submit 'Reply', {:class => 'btn btn-primary', :id => "send-message"}
+            = f.submit 'Send', {:class => 'btn btn-primary', :id => "send-message"}
     - else
       %h3 
-        = link_to "Sign up" , new_user_registration_path
+        = link_to "Sign up" , new_user_registration_path(ref_user_id: @user.id)
         or
         = link_to "Sign in" , new_user_session_path
         to send a message to
