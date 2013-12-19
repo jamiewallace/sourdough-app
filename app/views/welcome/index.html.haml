@@ -9,7 +9,7 @@
 .row
   .col-md-5.welcome-h1-text
     %h1 Find, or share, some sourdough starter in your hood
-  .col-md-3.welcome-search-box
+  .col-md-4.welcome-search-box
     %h1 I've got dough
     %h3 Share your sourdough starter and help others become successful bakers
     = form_tag search_users_path, method: :post do
@@ -18,7 +18,7 @@
         = hidden_field_tag :type, 'need'
         = submit_tag :Search
 .row
-  .col-md-3.welcome-search-box
+  .col-md-4.welcome-search-box
     %h1 I knead dough
     %h3 Find a sourdough starter and learn how to make high quality low cost bread
     = form_tag search_users_path, method: :post do
