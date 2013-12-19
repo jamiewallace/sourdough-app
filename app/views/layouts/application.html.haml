@@ -70,11 +70,6 @@
                   = link_to "Sign in" , new_user_session_path(ref_user_id: @user.id)
                 - else
                   = link_to 'Sign in', new_user_session_path
-            / %form.navbar-form.navbar-right{role: "search"}
-            /   .form-group
-            /     %input.form-control{placeholder: "DOESN'T WORK", type: "text"}/
-            /   %button.btn.btn-default{type: "submit"} Submit
-
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
         

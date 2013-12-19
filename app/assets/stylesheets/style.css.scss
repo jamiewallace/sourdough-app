@@ -11,17 +11,38 @@ $grey_light         : #ABC4CA;
 
 /* site wide */
 
+
+
+.btn.btn-primary {
+  background-color: orange;
+  border: orange;
+}
+
+.contacts-list {
+  a {
+    background-color: non
+  }
+}
+
+a.inbox-conversation-link {
+  background-color: orange;
+}
+
 .container {
   margin: 10px;
   padding: 10px;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Metrophobic', sans-serif;
 }
 
 body {
   background: url('/assets/homeimage2.jpg');
   background-size: cover;
-  }  
+  } 
+ #customisation,h1,h2, h3 {
+  font-family: 'Metrophobic', sans-serif;
+ } 
 
 /* navbar */
 
@@ -69,17 +90,42 @@ nav.navbar.navbar-default {
 .nav.navbar-right {
   li {
     float: left;
-  }
-  a {
+  } 
+
+  li > a {
     color: white;
     padding: none;
+    background-color: none;
   }
-  a:hover {
+ 
+  li > a:hover {
     color: orange;
     background-color: none;
   }
-  a:link {
+ 
+  li > a:link {
     text-decoration: none;
+    background-color: none;
+  }
+}
+
+.navbar-right > li > a:hover, .navbar-right > li > a:focus {
+  background-color: rgba(92,33,27, 0.1);
+}
+
+.navbar-left > li > a:hover, .navbar-right > li > a:focus {
+  background-color: rgba(92,33,27, 0.1);
+}
+
+.nav.navbar-left {
+  li {
+    float: left;
+  } 
+
+  li > a {
+    color: white;
+    padding: none;
+    background-color: none;
   }
 }
 
@@ -101,12 +147,15 @@ nav.navbar.navbar-default {
   background-color: rgba(232,210,189, 0.9);
   padding: 10px;
   border-radius: 5px;
-  // margin: 20px;
+  .col-md-4 {
+    a {
+      color: orange;
+    }
+  }
 }
 
 .box-css.col-md-3.messaging {
   margin-left: 20px;
-
 
 }
 img {
@@ -119,6 +168,10 @@ img {
 .text-only {
   padding: 15px;
   color: white;
+    a:hover {
+      color: orange;
+      background-color: none;
+  }
 }
 
 .inner-row {

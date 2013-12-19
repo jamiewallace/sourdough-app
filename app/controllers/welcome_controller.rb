@@ -8,4 +8,16 @@ class WelcomeController < ApplicationController
 
   end
 
+  def contact
+
+  end
+
+  def faq
+
+  end
+
+  def forum
+
+  end
+
 end
