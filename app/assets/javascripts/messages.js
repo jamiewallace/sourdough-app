@@ -60,11 +60,16 @@ $(function() {
 
     $('.delete-message').on('click', function(event) {
       event.preventDefault();
-      var url = $(this).attr('href');
-      $(this).parent().addClass('pending-delete');
+
+      var $this = $(this);
+      var url = $this.attr('href');
+      $this.parent().addClass('pending-delete');
+
       deleteMessage(url);
     })
   }
+
+  listenForThreadEvents();
 
   //if we are on a profile page , we need to call the javascript functions
   if($("#new-message-profile").length > 0) listenForThreadEvents()
