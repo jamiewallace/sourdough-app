@@ -6,9 +6,6 @@
     .col-md-3
       = image_tag @user.avatar
     .col-md-3
-      Username: 
-      = @user.username
-      %br
       Location: 
       = @user.town_city
       %br
@@ -23,11 +20,22 @@
     .box-css.col-md-8 
       -if @user.images.present?
         %h3 #{@user.username}'s photos
-        %ul
-        #slider.nivoSlider
-          %img
+        #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+          / Indicators
+          / %ol.carousel-indicators
+          /   %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+          /   %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+          /   %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+          / Wrapper for slides
+          .carousel-inner
             - @user.images.each do |image|
-              = image_tag image.image_url
+              .item{class: ("active" if @user.images.first.id == image.id)}
+                = image_tag image.image_url(:thumb)
+          / Controls
+          %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic"}
+            %span.glyphicon.glyphicon-chevron-left
+          %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic"}
+            %span.glyphicon.glyphicon-chevron-right
     
       = form_for @image do |f| 
         .field
@@ -40,7 +48,7 @@
           .actions
           = f.submit 'Save'  
     
-  .box-css.col-md-3
+  .box-css.col-md-3.messaging
     - if current_user
       - if current_user.id != @user.id
         %h3 Messages with #{@user.username}
@@ -63,7 +71,7 @@
         = link_to "Sign in" , new_user_session_path
         to send a message to
         = "#{@user.username}"
-        and see if they'll share some dough with you
+        
 
  
   :javascript

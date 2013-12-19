@@ -31,6 +31,12 @@ body {
   font-size: 20px;
   font-weight: bold;
   }
+  a:hover {
+    color: orange;
+  }
+  a:link {
+    text-decoration: none;
+  }
 }
 
 .form-control {
@@ -51,6 +57,13 @@ nav.navbar.navbar-default {
   li {
     float: left;
   }
+  a:hover {
+    color: orange;
+    background-color: none;
+  }
+  a:link {
+    text-decoration: none;
+  }
 }
 
 .nav.navbar-right {
@@ -59,7 +72,24 @@ nav.navbar.navbar-default {
   }
   a {
     color: white;
+    padding: none;
   }
+  a:hover {
+    color: orange;
+    background-color: none;
+  }
+  a:link {
+    text-decoration: none;
+  }
+}
+
+/* Footer*/
+
+.navbar-fixed-bottom {
+  margin-top: 20px;
+  position: relative;
+  clear: both;
+  border-radius: 5px;
 }
 
 
@@ -74,10 +104,14 @@ nav.navbar.navbar-default {
   // margin: 20px;
 }
 
+.box-css.col-md-3.messaging {
+  margin-left: 20px;
 
+
+}
 img {
-  height: 150px;
-  width: 150px;
+  // height: 150px;
+  // width: 150px;
   border-radius: 5px;
 }
 
