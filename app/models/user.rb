@@ -46,6 +46,10 @@ class User < ActiveRecord::Base
     User.find_all_by_id [users_contacted, users_contacted_by]
   end
 
+  def count_new_messages_with user
+    self.messages_received.where(sender_id: user.id, is_read: false).count
+  end
+
   def users_contacted
     self.messages_sent.pluck(:recipient_id)   # Returns ids of users has user has sent messages to
   end

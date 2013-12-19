@@ -5,7 +5,10 @@
         %h3 Contacts
         %ul.contacts-list
           - @contact_list.each do |contact|
-            %li= link_to contact.username, conversation_path(contact.id), {:class => 'inbox-conversation-link'}
+            %li
+              %a.inbox-conversation-link{href: conversation_path(contact.id)}
+                #{contact.username}
+                (<span class='inbox-conversation-counter'>#{current_user.count_new_messages_with(contact)}</span>)
       - else
         %h3 No messages yet
 

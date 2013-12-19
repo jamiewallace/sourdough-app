@@ -11,7 +11,21 @@ $(function() {
 
   $('.inbox-conversation-link').on('click', function(event) {
     event.preventDefault();
-    var url = $(this).attr('href');
+
+    var $this = $(this);
+    var url = $this.attr('href');
+
+    var $inboxConversationCounter = $this.children(".inbox-conversation-counter");
+    var counter = parseInt($inboxConversationCounter.html());
+    $inboxConversationCounter.html("0");
+
+    var $globalCounter = $(".global-counter");
+    var globalCounterValue = parseInt($globalCounter.html());
+    globalCounterValue -= counter
+
+    var notificationMessage = globalCounterValue == 1 ? " new message" : " new messages"
+    $globalCounter.html(globalCounterValue + notificationMessage);
+
     getConversation(url);
   });
 
@@ -51,12 +65,6 @@ $(function() {
       deleteMessage(url);
     })
   }
-
-  if ($('.inbox-conversation-link').length != 0) {
-    var auto_load_first_url = $('.inbox-conversation-link').first().attr('href');
-    getConversation(auto_load_first_url);
-  }
-  
 
   //if we are on a profile page , we need to call the javascript functions
   if($("#new-message-profile").length > 0) listenForThreadEvents()

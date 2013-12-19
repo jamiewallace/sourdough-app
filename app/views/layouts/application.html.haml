@@ -13,7 +13,7 @@
 
 
 
-  %body
+  %body#customisation
     .container
       %nav.navbar.navbar-default{role: "navigation"}
         / overall nav
@@ -29,7 +29,10 @@
                 %span
                   %b Hello #{current_user.username}
               %li
-                = link_to pluralize(current_user.messages_received.where(is_read: false).count, "new message"), inbox_path
+                %a{href: inbox_path}
+                  %span.global-counter
+                    = pluralize(current_user.messages_received.where(is_read: false).count, "new message")
+
               %li
                 = link_to 'Edit Profile', edit_user_registration_path
               
@@ -57,10 +60,16 @@
           .collapse.navbar-collapse
             %ul.nav.navbar-right
               %li
-                = link_to 'Sign up', new_user_registration_path
+                - if @user
+                  = link_to "Sign up" , new_user_registration_path(ref_user_id: @user.id)
+                - else
+                  = link_to 'Sign up', new_user_registration_path
                 /|
               %li
-                = link_to 'Sign in', new_user_session_path
+                - if @user
+                  = link_to "Sign in" , new_user_session_path(ref_user_id: @user.id)
+                - else
+                  = link_to 'Sign in', new_user_session_path
             / %form.navbar-form.navbar-right{role: "search"}
             /   .form-group
             /     %input.form-control{placeholder: "DOESN'T WORK", type: "text"}/
@@ -72,5 +81,14 @@
       = yield
     
       %nav.navbar.navbar-default.navbar-fixed-bottom{role: "navigation"}
-
+        %ul.nav.navbar-left  
+          %li
+            = link_to 'About', about_path
+          %li
+            = link_to 'Contact', contact_path
+          
+          %li
+            = link_to 'FAQ', faq_path
+          %li
+            = link_to 'Forum', forum_path
 
