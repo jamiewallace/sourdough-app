@@ -69,7 +69,7 @@
       %h3 
         = link_to "Sign up" , new_user_registration_path(ref_user_id: @user.id)
         or
-        = link_to "Sign in" , new_user_session_path
+        = link_to "Sign in" , new_user_session_path(ref_user_id: @user.id)
         to send a message to
         = "#{@user.username}"
         
