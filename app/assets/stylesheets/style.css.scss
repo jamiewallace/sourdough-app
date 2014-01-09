@@ -260,14 +260,27 @@ img {
 input#address {
   width: 220px;
   height: 35px;
-  border-radius: 3px;
+  border-radius:3px;
   font-size: 20px;
+  border: 0px;
+  padding-left: 3px;
+
 }
 
 input.home-search-button {
   width: 75px;
   height: 35px;
+  border: 0px;
+  padding: 0px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+  font-size: 16px;
+  color: white;
 }
+
+// input.home-search-button:hover {
+//   color: rgb(133,105,76);
+// }
 
 .form-group.inner-row {
   width: 275px;
