@@ -1,14 +1,4 @@
 
-$grey_dark          : #303233;
-$grey_light         : #ABC4CA;
-
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /* site wide */
 
 .main {
@@ -58,7 +48,7 @@ body {
     font-weight: bold;
   }
   a:hover {
-    color: orange;
+    color: rgb(220,163,97);
   }
   a:link {
     text-decoration: none;
@@ -75,7 +65,7 @@ body {
 }
 
 nav.navbar.navbar-default {
-  background-color: rgba(92,33,27, 0.8);
+  background-color: rgba(133,105,76, 0.8);
   border: 0px;
 }
 
@@ -84,7 +74,7 @@ nav.navbar.navbar-default {
     float: left;
   }
   a:hover {
-    color: orange;
+    color: rgb(220,163,97);
     background-color: none;
   }
   a:link {
@@ -104,7 +94,7 @@ nav.navbar.navbar-default {
   }
  
   li > a:hover {
-    color: orange;
+    color: rgb(220,163,97);
     background-color: none;
   }
  
@@ -115,11 +105,11 @@ nav.navbar.navbar-default {
 }
 
 .navbar-right > li > a:hover, .navbar-right > li > a:focus {
-  background-color: rgba(92,33,27, 0.1);
+  background-color: rgba(133,105,76, 0.1);
 }
 
 .navbar-left > li > a:hover, .navbar-right > li > a:focus {
-  background-color: rgba(92,33,27, 0.1);
+  background-color: rgba(133,105,76, 0.1);
 }
 
 .nav.navbar-left {
@@ -241,7 +231,7 @@ img {
 
 .col-md-5.welcome-h1-text {
   color: white;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 1px 1px 1px black;
   font-size: 25px;
   margin-left: 20px;
 }
@@ -254,17 +244,29 @@ img {
 .welcome-search-box {
 
   color: white;
-  background-color: rgba(92,33,27, 0.8);
+  background-color: rgba(133,105,76, 0.8);
   padding: 10px;
   margin: 30px 100px;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(92,33,27, 0.8);
-  text-shadow: 2px 2px 2px black;
+  // box-shadow: 5px 5px 10px rgba(133,105,76, 0.8);
+  text-shadow: 1px 1px 1px black;
   float: right;
   h1 {
     margin: 0 0 5px 0;
     font-size: 40px;
   }
+}
+
+input#address {
+  width: 220px;
+  height: 35px;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+input.home-search-button {
+  width: 75px;
+  height: 35px;
 }
 
 .form-group.inner-row {
@@ -293,7 +295,7 @@ img {
 
 .contacts-list a {
   display: block;
-  background: $grey_light;
+  background: #ABC4CA;
   color: #000;
   padding: 0.5rem 1rem;
 }
@@ -313,7 +315,7 @@ img {
 }
 
 #inline-message-compose {
-  background:$grey_dark;
+  background: #303233;
   width: 420px;
   height: 0;
   position:fixed;

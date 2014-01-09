@@ -16,7 +16,7 @@
       .inner-row
         = text_field_tag :address, nil, placeholder: 'Enter location'
         = hidden_field_tag :type, 'need'
-        = submit_tag :Search
+        = submit_tag :Search, class: "btn home-search-button" 
 .row
   .col-md-4.welcome-search-box
     %h1 I knead dough
