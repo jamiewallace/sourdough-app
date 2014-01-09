@@ -48,7 +48,7 @@ body {
     font-weight: bold;
   }
   a:hover {
-    color: rgb(220,163,97);
+    color: orange;
   }
   a:link {
     text-decoration: none;
@@ -74,7 +74,7 @@ nav.navbar.navbar-default {
     float: left;
   }
   a:hover {
-    color: rgb(220,163,97);
+    color: orange;
     background-color: none;
   }
   a:link {
@@ -94,7 +94,7 @@ nav.navbar.navbar-default {
   }
  
   li > a:hover {
-    color: rgb(220,163,97);
+    color: orange;
     background-color: none;
   }
  
@@ -241,6 +241,31 @@ img {
   width: 100%;
 }
 
+.welcome-text-box {
+
+  color: white;
+  background-color: rgba(133,105,76, 0.8);
+  padding: 10px;
+  margin: 30px 50px;
+  border-radius: 5px;
+  position: absolute;
+  float: left;
+  h1 {
+    margin: 0 0 5px 0;
+    font-size: 40px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: orange;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
 .welcome-search-box {
 
   color: white;
@@ -248,8 +273,6 @@ img {
   padding: 10px;
   margin: 30px 100px;
   border-radius: 5px;
-  // box-shadow: 5px 5px 10px rgba(133,105,76, 0.8);
-  text-shadow: 1px 1px 1px black;
   float: right;
   h1 {
     margin: 0 0 5px 0;

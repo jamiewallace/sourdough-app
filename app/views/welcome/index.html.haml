@@ -7,14 +7,18 @@
 
 
 .row
-  .col-md-5.welcome-h1-text
+  .col-md-4.welcome-text-box
     %h1 Find, or share, some sourdough starter in your hood
+    %br
+    %p
+      New to sourdough bread? 
+      =link_to 'Learn more...'
   .col-md-4.welcome-search-box
     %h1 I've got dough
     %h3 Share your sourdough starter and help others become successful bakers
     = form_tag search_users_path, method: :post do
       .inner-row
-        = text_field_tag :address, nil, placeholder: 'Enter location'
+        = text_field_tag :address, nil, placeholder: 'Enter your location'
         = hidden_field_tag :type, 'need'
         = submit_tag :Search, class: "btn home-search-button" 
 .row
@@ -23,7 +27,7 @@
     %h3 Find a sourdough starter and learn how to make high quality low cost bread
     = form_tag search_users_path, method: :post do
       .inner-row
-        = text_field_tag :address, nil, placeholder: 'Enter location'
+        = text_field_tag :address, nil, placeholder: 'Enter your location'
         = hidden_field_tag :type, 'have'
         = submit_tag :Search, class: "btn home-search-button"
 
