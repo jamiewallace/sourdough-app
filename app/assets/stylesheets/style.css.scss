@@ -21,6 +21,7 @@ a.inbox-conversation-link {
 }
 
 .container {
+  font-size: 16px;
   margin: 10px;
   padding: 10px;
   margin-right: auto;
@@ -132,6 +133,24 @@ nav.navbar.navbar-default {
   clear: both;
   border-radius: 5px;
 }
+
+
+/* Contact form */
+
+.form-control.message {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+/* Static pages */
+
+.box-css.col-md-8 {
+  padding-left: 25px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+}
+
+
 
 
 /* Member profile page */

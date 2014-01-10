@@ -1,3 +1,33 @@
-.box-css.col-md-4
+.box-css.col-md-8
   %h1 Contact
-  This is where the contact stuff will be
+  
+  %p
+  You can contact us through the form below, or by emailing us on:
+  %br
+  %br
+  %a{:href => "mailto:bake@sourdoughmapper.com", :target => "_top"}
+    bake@sourdoughmapper.com
+
+  %br
+  %br
+
+  %form.form-horizontal{:role => "form"}
+  .form-group
+    %label.col-sm-2.control-label{:for => "Name"} Name
+    .col-sm-10
+      %input#Name.form-control{:placeholder => "Name", :type => "name"}
+  %br
+  .form-group
+    %label.col-sm-2.control-label{:for => "Email"} Email
+    .col-sm-10
+      %input#Email.form-control{:placeholder => "Email", :type => "email"}
+  %br
+  .form-group
+    %label.col-sm-2.control-label{:for => "Message"} Message
+    .col-md-4
+      %textarea.form-control.message{:placeholder => "Message", :type => "message", :rows => "5"} 
+  %br
+  .form-group
+  .col-sm-offset-2.col-sm-10
+    %button.btn.btn-default{:type => "submit"} Send
+
