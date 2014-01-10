@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Sourdoughtracker
+    %title Sourdoughmapper
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
     = stylesheet_link_tag    "application", :media => "all"
     %link{href: "http://fonts.googleapis.com/css?family=Metrophobic", rel: "stylesheet", type: "text/css"}
@@ -22,7 +22,7 @@
           / logged in nav inc search
           .navbar-header 
             .navbar-brand
-              =link_to 'Sourdoughtracker', user_path(current_user)
+              =link_to 'Sourdoughmapper', user_path(current_user)
           .collapse.navbar-collapse
             %ul.nav.navbar-right
               %li.text-only
@@ -56,7 +56,7 @@
           / not logged in nav inc search
           .navbar-header 
             .navbar-brand
-              =link_to 'Sourdoughtracker', root_path
+              =link_to 'Sourdoughmapper', root_path
           .collapse.navbar-collapse
             %ul.nav.navbar-right
               %li
@@ -82,9 +82,12 @@
             = link_to 'About', about_path
           %li
             = link_to 'Contact', contact_path
-          
           %li
             = link_to 'FAQ', faq_path
           %li
             = link_to 'Forum', forum_path
+        %ul.nav.navbar-right
+          %li
+            %a{:href => "https://twitter.com/sourdoughmapper", :target => "_blank"}
+              %img.twitter{:src => "/assets/twitter_bird_blue_32.png"}
 
