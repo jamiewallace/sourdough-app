@@ -125,6 +125,14 @@ nav.navbar.navbar-default {
   }
 }
 
+button.btn.btn-default.nav {
+  width: 60px;
+  text-align: center;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+
 /* Footer*/
 
 .navbar-fixed-bottom {
@@ -154,6 +162,11 @@ nav.navbar.navbar-default {
 
 
 /* Member profile page */
+
+.adsense {
+  width: 728px;
+  height: 90px;
+}
 
 .col-md-8 {
   position: relative; 
