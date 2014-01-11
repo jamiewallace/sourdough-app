@@ -235,6 +235,11 @@ button.btn.btn-default.nav {
   margin-bottom: 10px;
 }
 
+.box-css.col-md-4.messaging {
+  max-width: 351px;
+  margin-left: 15px;
+}
+
 
 img {
   border-radius: 5px;
@@ -257,6 +262,7 @@ img {
 
 .box-css.col-md-3.messaging {
   margin-left: 20px;
+  padding: 0px;
 }
 
 /* Welcome page */
@@ -381,6 +387,15 @@ input.home-search-button {
 
 .message-from {
   font-style: italic;
+}
+
+#message-thread {
+  max-width: 325px;
+  margin-right: 0px;
+}
+
+#message-compose {
+  max-width: 325px;
 }
 
 #inline-message-compose {

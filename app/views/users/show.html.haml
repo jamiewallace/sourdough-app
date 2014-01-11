@@ -50,7 +50,7 @@
           .actions
           = f.submit 'Save'  
   
-  .box-css.col-md-3.messaging
+  .box-css.col-md-4.messaging
     - if current_user
       - if current_user.id != @user.id
         %h3 Message #{@user.username}
@@ -74,12 +74,10 @@
         to send a message to
         = "#{@user.username}"
         
-%script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
-/ Jamie Wallace
-%ins.adsbygoogle{"data-ad-client" => "ca-pub-8447293650663384", "data-ad-slot" => "3985446907", :style => "display:inline-block;width:728px;height:90px"}
-
+  .col-md-4
+    %a.twitter-timeline{"data-widget-id" => "422083255546806272", :href => "https://twitter.com/search?q=sourdough", :height => "300px"} Tweets about "sourdough"
   :javascript
-  (adsbygoogle = window.adsbygoogle || []).push({});
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
  
   :javascript
   $(window).load(function() {
