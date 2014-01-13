@@ -74,8 +74,8 @@
         to send a message to
         = "#{@user.username}"
         
-  .col-md-4
-    %a.twitter-timeline{"data-widget-id" => "422083255546806272", :href => "https://twitter.com/search?q=sourdough", :height => "300px"} Tweets about "sourdough"
+  .col-md-4.twitter
+    %a.twitter-timeline{"data-widget-id" => "422083255546806272", :href => "https://twitter.com/search?q=sourdough%20OR%20sourdoughmapper", :height => "400px", "data-chrome" => "transparent nofooter noborders noheader"} Tweets about "sourdough"
   :javascript
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
  
