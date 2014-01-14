@@ -34,8 +34,6 @@ file29 = File.open(File.join(Rails.root,"/app/assets/images/winna.jpg"))
 file30 = File.open(File.join(Rails.root,"/app/assets/images/sd17.jpg"))
 
 
-#remote_image_url
-
 user1 = User.create!(username: "Makemybread", first_name: "Neha", last_name: "Shah", avatar: file1, first_line_address: "9 Back Hill", second_line_address: "", town_city: "London", postcode: "EC1R 5EN", country: "UK", description: "If you give me some sourdough starter I'll be eternally grateful.  I need lessons too!", have_need: 'need', email: "neshah07@gmail.com", password: "password", password_confirmation: "password", role: "admin")
 
 user2 = User.create!(username: "Jamtista", first_name: "Jamie", last_name: "Wallace", avatar: file2, first_line_address: "12 Aquinas Street", second_line_address: "SE1 8AE", town_city: "London", postcode: "", country: "UK", description: "Desperately seeking a sourdough starter with a good sense of humour.", have_need: 'need', email: "wallacejamiec@gmail.com", password: "password", password_confirmation: "password", role: "admin")
