@@ -4,11 +4,12 @@
     .box.avatar
       = image_tag @user.avatar
     .box.description
-      Location: 
-      = @user.town_city
-      %br
-      Country: 
-      = @user.country
+      %h4 
+        Location: 
+        = @user.town_city
+      %h4
+        Country: 
+        = @user.country
       %br
       %br
       = @user.description
