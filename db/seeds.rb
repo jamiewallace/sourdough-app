@@ -56,33 +56,3 @@ message2 = Message.create(sender_id: user2.id, recipient_id: user1.id, content: 
 # Alice also messages Kate
 message3 = Message.create(sender_id: user2.id, recipient_id: user3.id, content: "Hello Alex, from Jamie")
 
-
-# t.string   "email",                  :default => "", :null => false
-#     t.string   "encrypted_password",     :default => "", :null => false
-#     t.string   "reset_password_token"
-#     t.datetime "reset_password_sent_at"
-#     t.datetime "remember_created_at"
-#     t.integer  "sign_in_count",          :default => 0,  :null => false
-#     t.datetime "current_sign_in_at"
-#     t.datetime "last_sign_in_at"
-#     t.string   "current_sign_in_ip"
-#     t.string   "last_sign_in_ip"
-#     t.string   "confirmation_token"
-#     t.datetime "confirmed_at"
-#     t.datetime "confirmation_sent_at"
-#     t.string   "unconfirmed_email"
-#     t.datetime "created_at",                             :null => false
-#     t.datetime "updated_at",                             :null => false
-#     t.string   "username"
-#     t.string   "first_name"
-#     t.string   "last_name"
-#     t.string   "avatar"
-#     t.string   "first_line_address"
-#     t.string   "second_line_address"
-#     t.string   "town_city"
-#     t.string   "postcode"
-#     t.string   "country"
-#     t.text     "description"
-#     t.string   "give_take"
-#     t.float    "lat"
-#     t.float    "lon"

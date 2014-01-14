@@ -35,7 +35,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) 
     @image = Image.new
 
     if current_user
